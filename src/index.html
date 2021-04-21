@@ -6,11 +6,27 @@
     <title><%= htmlWebpackPlugin.options.title %></title>
   </head>
   <body>
-    <div id="bg"></div>
     <header>
-      <h1></h1>
+      <h1>Find Your Stolen Bike</h1>
     </header>
-    <main></main>
-    <footer></footer>
+    <main>
+      <form>
+        <section>
+          <label>
+            <input type="radio" name="stolenness" value="stolen" checked />
+            Stolen
+          </label>
+          <label>
+            <input type="radio" name="stolenness" value="not-stolen" />
+            Not Stolen
+          </label>
+          <label>
+            <input type="radio" name="stolenness" value="stolen-near-you" />
+            Stolen Near You
+          </label>
+          <input type="number" />
+        </section>
+      </form>
+    </main>
   </body>
 </html>
