@@ -10,7 +10,7 @@
       <h1>Find Your Stolen Bike</h1>
     </header>
     <main>
-      <form>
+      <form id="bike-tracker">
         <section>
           <label>
             <input type="radio" name="stolenness" value="stolen" checked />
@@ -24,7 +24,12 @@
             <input type="radio" name="stolenness" value="stolen-near-you" />
             Stolen Near You
           </label>
-          <input type="number" />
+        </section>
+        <section>
+          <input type="number" id="how-far" />
+        </section>
+        <section>
+          <button type="submit">Submit</button>
         </section>
       </form>
     </main>
