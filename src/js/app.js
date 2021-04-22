@@ -7,10 +7,8 @@ import $ from "jquery"
 import BikeTracker from "./bike-tracker"
 
 function clearFields() {
-  $(`#location`).val(``)
-  $(`.showErrors`).text(``)
-  $(`.showHumidity`).text(``)
-  $(`.showTemp`).text(``)
+  $(`#stolenness`).val(``)
+  $(`#how-far`).text(``)
 }
 
 function addText(response) {
@@ -18,11 +16,19 @@ function addText(response) {
 }
 
 $(document).ready(() => {
-  $(`#weatherLocation`).click(() => {
-    const city = $(`#location`).val()
+  $(`#bike-tracker`).on(`submit`, event => {
+    event.preventDefault()
+    const howFar = $(`input#how-far`).val()
+    const stolenness = $(`input[name=stolenness]`).val()
     clearFields()
-    BikeTracker.lookForBikes(city).then(response => {
+    BikeTracker.lookForBikes(howFar, stolenness).then(response => {
       addText(response)
     })
   })
+})
+
+const numbers = [230, 16, 652, 13]
+
+numbers.forEach(number => {
+  console.log(number)
 })

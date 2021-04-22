@@ -1,9 +1,9 @@
 /* eslint max-len: 0 */
 
 export default class BikeTracker {
-  static getWeather(city) {
+  static lookForBikes(howFar, stolenness) {
     return fetch(
-      `http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${process.env.API_KEY}`
+      `https://bikeindex.org:443/api/v3/search?page=1&per_page=25&location=IP&distance=${howFar}&stolenness=${stolenness}`
     )
       .then(response => {
         if (!response.ok) {
